@@ -13,7 +13,7 @@ const Navbar = (props) => {
         } else {
             return (
                 <>
-                <Link to='/create-quiz' className='navbar-item btn navbar-btn'>Add Question</Link>
+                <Link to='/add-question' className='navbar-item btn navbar-btn'>Add Question</Link>
                 </>
             )
         }

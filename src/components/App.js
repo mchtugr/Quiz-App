@@ -3,12 +3,10 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import Navbar from './Navbar';
 import history from '../history';
-import QuizStartScreen from './QuizStartScreen';
-import CreateQuiz from './CreateQuiz';
-import QuizScreen from './QuizScreen';
-import QuizDemo from './QuizDemo'
-import SummaryPage from './SummaryPage'
-import Mun from './Mun';
+import QuizSettings from './QuizSettings';
+import QuizScreen from './QuizScreen'
+import QuizResult from './QuizResult'
+import AddQuestion from './AddQuestion';
 
 
 const App = () => {
@@ -19,10 +17,10 @@ const App = () => {
                     <Navbar />
                     <div className="content">
                         <Switch>
-                            <Route path='/' exact component={QuizStartScreen} />
-                            <Route path='/demo' exact component={QuizDemo} />
-                            <Route path='/summary' exact component={SummaryPage} />
-                            <Route path='/create-quiz' exact component={Mun} />
+                            <Route path='/' exact component={QuizSettings} />
+                            <Route path='/quiz-page' exact component={QuizScreen} />
+                            <Route path='/result' exact component={QuizResult} />
+                            <Route path='/add-question' exact component={AddQuestion} />
                         </Switch>
                     </div>
                 </>

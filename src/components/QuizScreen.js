@@ -8,7 +8,7 @@ import history from '../history'
 
 import { fetchQuiz, submitQuiz } from '../actions'
 
-export class QuizDemo extends Component {
+export class QuizScreen extends Component {
     // -----local state-----
     state = {index: 0};
 
@@ -52,20 +52,21 @@ export class QuizDemo extends Component {
         // send the results obj to redux state.
         this.props.submitQuiz(results)
         //redirect route to '/summary' page.
-        history.push('/summary')
+        history.push('/result')
     }
 
     renderQuestion = () => {
         // if no question fetched, return homepage link
         if(this.props.questions.length ===0 ){
             return(
-                <button 
-                    className='btn quiz-btn' 
-                    onClick={() => history.push('/')} 
-                    style={{ margin:'0 auto' }}
-                > 
-                    Go Home 
-                </button>
+                <div className="flex-container">
+                    <button 
+                        className='btn quiz-btn home-btn' 
+                        onClick={() => history.push('/')} 
+                    > 
+                        Go Home 
+                    </button>
+                </div>
             )
         } else {
         const {questionBody, options, id} = this.props.questions[this.state.index]
@@ -125,5 +126,5 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect( mapStateToProps, { fetchQuiz, submitQuiz })(QuizDemo)
+export default connect( mapStateToProps, { fetchQuiz, submitQuiz })(QuizScreen)
 

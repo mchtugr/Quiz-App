@@ -12,16 +12,16 @@ const validationSchema = Yup.object().shape({
         .required('Required!')
 })
 
-const QuizStartScreen = (props) => {
+const QuizSettings = (props) => {
 
     const handleSubmit = values => {
         props.handleQuizSetting(values);
-        history.push('/demo');
+        history.push('/quiz-page');
     }
 
     return (
         <>
-        <div className="contentt">
+        <div className="flex-container">
             <div className='quiz-container quiz-settings'>
                 <Formik 
                     initialValues={{
@@ -104,4 +104,4 @@ const QuizStartScreen = (props) => {
     )
 }
 
-export default connect(null, { handleQuizSetting })(QuizStartScreen)
+export default connect(null, { handleQuizSetting })(QuizSettings)

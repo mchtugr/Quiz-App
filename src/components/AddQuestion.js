@@ -47,7 +47,7 @@ const MyTextArea = ({
  );
 
 
-const CreateQuiz = (props) => {
+const AddQuestion = (props) => {
 
 
     const handleQuestionSubmit = (values) => {
@@ -68,7 +68,7 @@ const CreateQuiz = (props) => {
     return (
       <div className='grid'>
         <h3 className='text-center p-3'>Create a Question</h3>
-        <div className="contentt">
+        <div className="flex-container">
           <div className='quiz-container'>
             <Formik
               initialValues={{
@@ -94,29 +94,29 @@ const CreateQuiz = (props) => {
                   <div id='options' className="options-container row mb-3">
                       <div className="optionn">
                         <Field component={RadioButton} name='correctAnswer' value={values.option1} label='A' />
-                        <Field name='option1' type='text' className='form-control'/>
+                        <Field name='option1' type='text' placeholder='Option 1' className='form-control'/>
                         <ErrorMessage name='option1' component='div' className='field-err'/>
                       </div>
                       <div className="optionn">
                         <Field component={RadioButton} name='correctAnswer' value={values.option2} label='B' />
-                        <Field name='option2' type='text' className='form-control'/>
+                        <Field name='option2' type='text' placeholder='Option 2' className='form-control'/>
                         <ErrorMessage name='option2' component='div' className='field-err'/>
                       </div>
                       <div className="optionn">
                         <Field component={RadioButton} name='correctAnswer' value={values.option3} label='C' />
-                        <Field name='option3' type='text' className='form-control'/>
+                        <Field name='option3' type='text' placeholder='Option 3' className='form-control'/>
                         <ErrorMessage name='option3' component='div' className='field-err'/>
                       </div>
                       <div className="optionn">
                         <Field component={RadioButton} name='correctAnswer' value={values.option4} label='D' />
-                        <Field name='option4' type='text' className='form-control'/>
+                        <Field name='option4' type='text' placeholder='Option 4' className='form-control'/>
                         <ErrorMessage name='option4' component='div' className='field-err'/>
                       </div>
                   </div>
                   <ErrorMessage name='correctAnswer' component='div' className='field-err' />
                   <div className="row mb-3">
                     <div className="col">
-                      <label htmlFor="grade" className='center'>Grade :</label>
+                      <label htmlFor="grade" className='label-center'>Grade</label>
                       <Field as='select' name='grade' className='form-control'>
                           <option value="5">5th Grade</option>
                           <option value="6">6th Grade</option>
@@ -125,7 +125,7 @@ const CreateQuiz = (props) => {
                       </Field>  
                     </div>
                     <div className="col">
-                      <label htmlFor="unit" className='center'>Unit :</label>
+                      <label htmlFor="unit" className='label-center'>Unit</label>
                       <Field as='select' name='unit' className='form-control'>
                           <option value="1">Unit 1</option>
                           <option value="2">Unit 2</option>
@@ -152,4 +152,4 @@ const CreateQuiz = (props) => {
     )
 }
 
-export default connect(null, { createQuestion })(CreateQuiz)
+export default connect(null, { createQuestion })(AddQuestion)

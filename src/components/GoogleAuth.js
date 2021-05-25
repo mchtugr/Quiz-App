@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { FaGoogle } from 'react-icons/fa';
+import { FaGoogle, FaSignOutAlt } from 'react-icons/fa';
 
 
 import { signIn, signOut } from '../actions';
@@ -40,13 +40,24 @@ export class GoogleAuth extends Component {
     renderAuthButton = () => {
         if(this.props.isSignedIn){
             return (
-                <div className='navbar-item navbar-btn btn' onClick={this.handleSignOut}>Sign Out</div>
+                <div className='navbar-item navbar-btn btn' onClick={this.handleSignOut}>
+                    <div className="sign-out-btn">
+                        <div className="icon-container">
+                            <FaSignOutAlt /> 
+                        </div>
+                        <div> Sign Out </div>
+                    </div>
+                </div>
             )
         } else {
             return (
                 <div className='navbar-item navbar-btn btn' onClick={this.handleSignIn}>
-                    <FaGoogle style={{color:'red'}}/> 
-                    <span>Sign In with Google</span>
+                    <div className="sign-in-btn">
+                        <div className="icon-container">
+                            <FaGoogle style={{color:'#DB4437'}}/> 
+                        </div>
+                        <div> Sign In with Google </div>
+                    </div>
                 </div>
             )
         }
